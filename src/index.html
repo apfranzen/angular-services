@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Ticker Prices</title>
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  </head>
+  <body ng-cloak>
+    <!-- sample angular code -->
+    <div class="container">
+      <div ng-controller="mainController as mainCtrl">
+        <h1>{{ mainCtrl.greeting }}</h1>
+      </div>
+      <div ng-controller="ethController as ethCtrl">
+        <button class="getExButton" type="button" ng-click="ethCtrl.click()">Ethereum</button>
+        <br>
+        <table>
+          <tr>
+            <th>Base:</th>
+            <th>Currency:</th>
+            <th>Price:</th>
+          </tr>
+          <tr>
+            <td>{{ ethCtrl.res.base }}</td>
+            <td>{{ ethCtrl.res.target }}</td>
+            <td>{{ ethCtrl.res.price }}</td>
+          </tr>
+        </table>
+      </div>
+      <div ng-controller="navController as navCtrl">
+        <button class="getExButton" type="button" ng-click="navCtrl.click()">Ethereum</button>
+
+        <table>
+          <tr>
+            <th>Base:</th>
+            <th>Currency:</th>
+            <th>Price:</th>
+          </tr>
+          <tr>
+            <td>{{ navCtrl.res.base }}</td>
+            <td>{{ navCtrl.res.target }}</td>
+            <td>{{ navCtrl.res.price }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- scripts -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/config.js"></script>
+    <!-- main component -->
+    <script type="text/javascript" src="js/components/main/main.controller.js"></script>
+    <script type="text/javascript" src="js/components/eth/eth.controller.js"></script>
+    <script type="text/javascript" src="js/components/nav/nav.controller.js"></script>
+    <script type="text/javascript" src="js/services/apiGetService.js"></script>
+  </body>
+</html>
